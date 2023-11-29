@@ -2,6 +2,7 @@ const refs = {
   wrapper: document.querySelector('.js-wrapper'),
   form: document.querySelector('.js-form'),
   input: document.querySelector('.js-field'),
+  btn: document.querySelector('.js-btn'),
 };
 
 refs.form.addEventListener('submit', onFormSubmit);
@@ -13,7 +14,7 @@ function onFormSubmit(ev) {
 
   fetchPokemonById(inputValue)
     .then(pokemon => {
-      //   console.log(pokemon);
+      console.log(pokemon);
 
       const val = markup(pokemon);
 
