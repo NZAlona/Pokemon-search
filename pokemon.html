@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch your Pokemon</title>
+    <link rel="stylesheet" href="pokemon.css" />
+  </head>
+  <body>
+    <p class="greeting">
+      Hi there!
+      <span class="span"
+        >Looking for your favorite Pokemon friend, just simply use the below input to search it by
+        id.</span
+      >
+    </p>
+    <form class="form js-form">
+      <label for="id">Enter ID</label>
+      <input type="number" name="nmb" id="id" class="field js-field" required />
+      <button type="submit" class="btn">Search</button>
+    </form>
+    <ul class="js-wrapper wrapper"></ul>
+    <script type="module" src="./pokemon.js"></script>
+  </body>
+</html>
