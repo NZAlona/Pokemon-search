@@ -11,18 +11,7 @@ function onFormSubmit(ev) {
 
   const inputValue = refs.input.value;
 
-  fetchPokemonById(inputValue);
-
-  ev.currentTarget.reset();
-}
-
-function fetchPokemonById(id) {
-  refs.wrapper.textContent = '';
-
-  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    .then(resp => {
-      return resp.json();
-    })
+  fetchPokemonById(inputValue)
     .then(pokemon => {
       //   console.log(pokemon);
 
@@ -31,6 +20,16 @@ function fetchPokemonById(id) {
       refs.wrapper.insertAdjacentHTML('beforeend', val);
     })
     .catch(err => console.log(err));
+
+  ev.currentTarget.reset();
+}
+
+function fetchPokemonById(id) {
+  refs.wrapper.textContent = '';
+
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(resp => {
+    return resp.json();
+  });
 }
 
 const markup = pok =>
