@@ -1,8 +1,8 @@
 const refs = {
   wrapper: document.querySelector('.js-wrapper'),
   form: document.querySelector('.js-form'),
-  input: document.querySelector('.js-field'),
-  btn: document.querySelector('.js-btn'),
+  // input: document.querySelector('.js-field'),
+  // btn: document.querySelector('.js-btn'),
 };
 
 refs.form.addEventListener('submit', onFormSubmit);
@@ -10,7 +10,11 @@ refs.form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(ev) {
   ev.preventDefault();
 
-  const inputValue = refs.input.value;
+  // const inputValue = refs.input.value;
+
+  // Input value from form using name="query"
+  const formInput = ev.currentTarget;
+  const inputValue = formInput.elements.query.value;
 
   fetchPokemonById(inputValue)
     .then(pokemon => {
