@@ -24,7 +24,9 @@ function onFormSubmit(ev) {
 
       refs.wrapper.insertAdjacentHTML('beforeend', val);
     })
-    .catch(err => console.log(err));
+    .catch(err =>
+      alert('Sorry there is no pokemon found with such ID. Please enter from 1 to 1025')
+    );
 
   ev.currentTarget.reset();
 }
